@@ -1,0 +1,17 @@
+{
+    "contents" : "## This functions will cache the mean of the Matrix and keep it in the memory\n## functions do\n\n## Write a short comment describing this function - updated by Pankaj\n\nmakeCacheMatrix <- function(x = matrix()) {\n\n  InverseMatrix <- NULL\n  setMatrix <- function(y) {\n    x <<- y\n    InverseMatrix <<- NULL\n  }\n  getMatrix <- function() x\n  setInverseMatrix <- function(InputMatrix) InverseMatrix <<- InputMatrix\n  getInverseMatrix <- function() InverseMatrix\n  list(setMAtrix = setMatrix, getMatrix = getMatrix,\n       setInverseMatrix = setInverseMatrix,\n       getInverseMatrix = getInverseMatrix)\n}\n\n\n## Write a short comment describing this function\n\ncacheSolve <- function(x, ...) {\n        ## Return a matrix that is the inverse of 'x'\n\n  InvertedMatrix <- x$getInverseMatrix()\n  if(!is.null(InvertedMatrix)) {\n    message(\"getting cached data\")\n    return(InvertedMatrix)\n  }\n  data <- x$getInverseMatrix()\n  InvertedMatrix <- solve(data)\n  x$setInverseMatrix(InvertedMatrix)\n  InvertedMatrix\n}\n",
+    "created" : 1450723705364.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1955853887",
+    "id" : "4594DB33",
+    "lastKnownWriteTime" : 1450724306,
+    "path" : "P:/git/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
