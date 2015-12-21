@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
+## This functions will cache the mean of the Matrix and keep it in the memory
 ## functions do
 
-## Write a short comment describing this function
+## Write a short comment describing this function - updated by Pankaj
 
 makeCacheMatrix <- function(x = matrix()) {
 
