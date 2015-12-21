@@ -1,12 +1,12 @@
 {
-    "contents" : "## This functions will cache the mean of the Matrix and keep it in the memory\n## functions do\n\n## Write a short comment describing this function - updated by Pankaj\n\nmakeCacheMatrix <- function(x = matrix()) {\n\n  InverseMatrix <- NULL\n  setMatrix <- function(y) {\n    x <<- y\n    InverseMatrix <<- NULL\n  }\n  getMatrix <- function() x\n  setInverseMatrix <- function(InputMatrix) InverseMatrix <<- InputMatrix\n  getInverseMatrix <- function() InverseMatrix\n  list(setMAtrix = setMatrix, getMatrix = getMatrix,\n       setInverseMatrix = setInverseMatrix,\n       getInverseMatrix = getInverseMatrix)\n}\n\n\n## Write a short comment describing this function\n\ncacheSolve <- function(x, ...) {\n        ## Return a matrix that is the inverse of 'x'\n\n  InvertedMatrix <- x$getInverseMatrix()\n  if(!is.null(InvertedMatrix)) {\n    message(\"getting cached data\")\n    return(InvertedMatrix)\n  }\n  data <- x$getInverseMatrix()\n  InvertedMatrix <- solve(data)\n  x$setInverseMatrix(InvertedMatrix)\n  InvertedMatrix\n}\n",
+    "contents" : "## This file is created by pankajmit as part of coursera programming assignment 2\n\n\n## This funcion creates a special vector for creating a list containing a function to \n## 1. Set the value of the matrix\n## 2. get the value of the matrix\n## 3. set the value of the Inverted Matrix\n## 4. get the value of the Inverted Matrix\n\nmakeCacheMatrix <- function(x = matrix()) {\n\n  InverseMatrix <- NULL\n  setMatrix <- function(y) {\n    x <<- y\n    InverseMatrix <<- NULL\n  }\n  getMatrix <- function() x\n  setInverseMatrix <- function(InputMatrix) InverseMatrix <<- InputMatrix\n  getInverseMatrix <- function() InverseMatrix\n  list(setMatrix = setMatrix, getMatrix = getMatrix,\n       setInverseMatrix = setInverseMatrix,\n       getInverseMatrix = getInverseMatrix)\n}\n\n\n## The following function returns the inverted matrix of the special \"matrix\" created with the above function\n## It first checks to see if the inverted matrix is already available and cached. If yes, cached inverted matrix is returned.\n## If no, inverse matrix is first calculated, saves it in cache and then return the inverted matrix \n\ncacheSolve <- function(x, ...) {\n        ## Return a matrix that is the inverse of 'x'\n\n  InvertedMatrix <- x$getInverseMatrix()\n  if(!is.null(InvertedMatrix)) {\n    message(\"getting cached data\")\n    return(InvertedMatrix)\n  }\n  data <- x$getMatrix()\n  InvertedMatrix <- solve(data)\n  x$setInverseMatrix(InvertedMatrix)\n  InvertedMatrix\n}\n",
     "created" : 1450723705364.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1955853887",
+    "hash" : "4215319140",
     "id" : "4594DB33",
-    "lastKnownWriteTime" : 1450724306,
+    "lastKnownWriteTime" : 1450725133,
     "path" : "P:/git/ProgrammingAssignment2/cachematrix.R",
     "project_path" : "cachematrix.R",
     "properties" : {
